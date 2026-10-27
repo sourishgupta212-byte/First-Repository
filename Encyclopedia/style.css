@@ -1,0 +1,100 @@
+/* ==========================================
+   WIKI LAYOUT (Grid Setup)
+   ========================================== */
+body {
+    margin: 0;
+    padding: 0; /* Handled by internal layout now */
+    background-color: #ffffff;
+    color: #202122;
+    font-family: sans-serif;
+    font-size: 14px;
+    
+    /* Creates a top-bar row and a split sidebar/content column */
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "sidebar main";
+    grid-template-columns: 170px 1fr; /* Exact Wikipedia-style sidebar width */
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+}
+
+/* Header stretches completely across the top */
+header {
+    grid-area: header;
+    padding: 20px 30px 10px 30px;
+    background-color: #f8f9fa; /* Light tint for top bar area */
+    border-bottom: 1px solid #eaecf0;
+}
+
+/* Sidebar locks to the left column */
+aside {
+    grid-area: sidebar;
+    padding: 20px 15px;
+    border-right: 1px solid #a2a9b1;
+    background-color: #f8f9fa;
+}
+
+/* Main text block expands in the right column */
+main {
+    grid-area: main;
+    padding: 20px 40px;
+}
+
+/* ==========================================
+   TYPOGRAPHY & ACCENTS 
+   ========================================== */
+h1, h2, h3 {
+    font-family: "Linux Libertine", "Georgia", serif;
+    font-weight: normal;
+    color: #000000;
+}
+
+h1 {
+    font-size: 1.8em;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 5px;
+    margin-top: 0; /* Keeps heading lined up with sidebar */
+}
+
+h2 {
+    font-size: 1.5em;
+    border-bottom: 1px solid #eaecf0;
+    padding-bottom: 3px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Links */
+a {
+    color: #0645ad;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #0b0080;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   SIDEBAR NAVIGATION TUNING
+   ========================================== */
+aside h2 {
+    font-size: 12px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: #54595d;
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+.start-links nav a {
+    display: block;
+    padding: 4px 0;
+    font-size: 13px;
+}

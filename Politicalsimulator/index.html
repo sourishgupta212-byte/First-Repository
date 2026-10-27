@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <Title>The Ones Who Govern</Title>
+    <style>
+    body {
+        margin: 0;
+        padding: 20px;
+        background-color: #e9edf2;
+        color: #202938;
+        font-family: Arial, sans-serif;
+    }
+    .Heading {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+   .Dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    max-width: 900px;
+}
+    .Politics, .Economy, .Defense, .Support {
+    box-sizing: border-box;
+    min-width: 0;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #d5dce5;
+    border-radius: 8px;
+}
+.Government-logo {
+    display: block;
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+.Government-Deck {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <h1 class="Heading">The Ones Who Govern</h1>
+    <p> A Poltical Game</p>
+    <div class="Game-Time">
+        <h2 id="month">January 1936</h2>
+        <p>Current Month</p>
+    </div>
+    <div class="Dashboard">
+        <div class="Politics">
+            <h2>Politics</h2>
+            <p> Party Name : National Democratic Union</p>
+            <p> Party Resources : <span id="resources"> 12 </span> </p>
+            <p> Coalition dissent : <span id="coalition-dissent"> Low </span> </p>
+            <p> Support for the Republic: <span id="republic-support"> 78% </span> </p> 
+        </div>
+        <div class="Economy">
+            <h2>Economy</h2>
+            <p> Inflation : <span id="inflation"> 10% </span> </p>
+            <p> Economic Growth : <span id="economic-growth"> -2.4% </span></p>
+            <p> Unemployment :<span id="unemployment"> 12 </span></p>
+        </div>
+        <div class="Defense">
+            <h2>Defense</h2>
+            <p> (INSREST PARAMILITARIES HERE) </p>
+            <p> (INSERT MILITARISATION HERE)</p>
+            <p> National Army Loyalty : <span id="national-army-loyalty"> mostly loyal </span></p>
+        </div>
+        <div class="Support">
+            <h2>Support</h2>
+            <p> National Democratic part :<span id="NDP-support"> 29% </span></p>
+            <p> INSTER OTHER PARTIES HERE </p>
+        </div>
+        <button class="Government-Deck" onclick="nextmonth()">
+            <img src="Governmentdeck..jpg" class="Government-logo">
+        </button>
+    </div>
+</body>
+<script> 
+    let month = 0
+    let year = 1936
+    let months = [
+    "January", "February", "March",
+    "April", "May", "June",
+    "July", "August", "September",
+    "October", "November", "December"
+];
+
+function nextmonth() {
+    month = month + 1;
+    if (month === 12) {
+        month = 0;
+        year = year + 1;
+    }
+    document.getElementById("month").textContent =
+        months[month] + " " + year;
+}
+</script>
+</html>

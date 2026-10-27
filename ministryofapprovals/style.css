@@ -1,0 +1,94 @@
+
+/* Main two-column layout */
+.mainarea {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 24px;
+    max-width: 1400px;
+    margin: 32px auto;
+    padding: 0 24px;
+    align-items: start;
+}
+
+/* Left sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Make sidebar cards fit the column */
+.sidebar section {
+    max-width: none;
+    margin-bottom: 0;
+}
+
+/* Right-hand workspace */
+.workspace {
+    min-width: 0;
+    min-height: 500px;
+    padding: 28px;
+    background-color: white;
+    border: 1px solid #dce3eb;
+    border-radius: 10px;
+}
+
+/* Consistent navigation buttons */
+.nav-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    text-align: left;
+    font-size: 14px;
+    color: #243247;
+    background-color: #f1f4f8;
+    border: 1px solid #dce3eb;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #dce5ef;
+}
+
+/* Correspondence buttons */
+.communication {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: none;
+    width: auto;
+    margin: 0;
+}
+
+.sendapplications,
+.recieveapplications {
+    padding: 14px;
+    margin: 0;
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.sendapplications {
+    background-color: lightslategrey;
+    color: white;
+}
+
+.recieveapplications {
+    background-color: lightsteelblue;
+    color: #243247;
+}
+
+/* Narrow screens */
+@media (max-width: 750px) {
+    .mainarea {
+        grid-template-columns: 1fr;
+    }
+
+    .workspace {
+        min-height: 350px;
+    }
+}

@@ -1,0 +1,22 @@
+number = input("Enter your Number you want it to attemtp to guess: ")
+def pause(text):
+    print(text)
+    input()
+import time
+def timed(text):
+    print(text)
+    time.sleep(2)
+print("Please wait")
+timed("Accessing Private files...")
+timed("Exporting private files....")
+timed("Understanding User Psychology...")
+timed("Attempting to assign a IQ....")
+timed("Accessing Browser history....")
+timed("Collecting User data.....")
+timed("Proccessing : 1/10000")
+timed("Proccessingg : 3000/10000")
+time.sleep(2)
+timed("Proccessing complete")
+timed("IQ assigned : 5")
+timed("Guessing Number.....")
+pause("Your number: " + (number))
